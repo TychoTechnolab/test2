@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'env.dart';
 import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -60,6 +61,11 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: onChangeLanguage,
               child: Text(local.changeLanguage),
+            ),
+            const SizedBox(height: 20),
+            Text(
+              Env.apiUrl,
+              style: const TextStyle(fontSize: 22),
             ),
           ],
         ),
