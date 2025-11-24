@@ -82,6 +82,7 @@ class _MapPageState extends State<MapPage> {
           TileLayer(
             urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
             subdomains: const ['a', 'b', 'c'],
+            userAgentPackageName: 'com.example.test_flutter',
           ),
 
           if (currentLocation != null)
