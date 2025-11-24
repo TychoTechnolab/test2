@@ -71,3 +71,11 @@ jobs:
         with:
           name: app-release
           path: test_flutter/build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload APK to GitHub Release (latest)
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          files: test_flutter/build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
