@@ -47,6 +47,9 @@ jobs:
     name: Build Flutter APK
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     defaults:
       run:
         working-directory: test_flutter
