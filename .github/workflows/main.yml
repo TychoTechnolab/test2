@@ -12,6 +12,9 @@ jobs:
   backend-push:
     needs: backend-build
     uses: ./.github/workflows/backend-push.yml
+    permissions:
+      packages: write
+      id-token: write
 
   flutter-build:
     uses: ./.github/workflows/flutter-build.yml
@@ -19,3 +22,5 @@ jobs:
   flutter-release:
     needs: flutter-build
     uses: ./.github/workflows/flutter-release.yml
+    permissions:
+      contents: write

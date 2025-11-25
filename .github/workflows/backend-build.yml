@@ -8,9 +8,6 @@ jobs:
     name: Build Dart Frog Docker Image
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-
     defaults:
       run:
         working-directory: test_project
