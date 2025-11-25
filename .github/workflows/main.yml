@@ -6,21 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  backend-build:
-    uses: ./.github/workflows/backend-build.yml
+  backend:
+    uses: ./.github/workflows/backend.yml
 
-  backend-push:
-    needs: backend-build
-    uses: ./.github/workflows/backend-push.yml
-    permissions:
-      packages: write
-      id-token: write
-
-  flutter-build:
-    uses: ./.github/workflows/flutter-build.yml
-
-  flutter-release:
-    needs: flutter-build
-    uses: ./.github/workflows/flutter-release.yml
-    permissions:
-      contents: write
+  flutter:
+    uses: ./.github/workflows/flutter.yml
