@@ -8,6 +8,11 @@ on:
 jobs:
   backend:
     uses: ./.github/workflows/backend.yml
+    permissions:
+      packages: write
+      id-token: write
 
   flutter:
     uses: ./.github/workflows/flutter.yml
+    permissions:
+      contents: write
