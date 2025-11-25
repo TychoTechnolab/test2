@@ -1,7 +1,7 @@
 name: Push Backend Docker Image
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   push-backend:
