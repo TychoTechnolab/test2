@@ -1,0 +1,29 @@
+name: Build Backend Docker Image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-backend:
+    name: Build Dart Frog Docker Image
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    defaults:
+      run:
+        working-directory: test_project
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set image name
+        id: vars
+        run: |
+          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
+          echo "image=$IMAGE" >> $GITHUB_OUTPUT
+
+      - name: Build Docker image
+        run: docker build -t ${{ steps.vars.outputs.image }}:latest .
