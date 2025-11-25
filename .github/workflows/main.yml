@@ -7,15 +7,15 @@ on:
 
 jobs:
   backend-build:
-    uses: ./.github/workflows/backend-build.yml@main
+    uses: ./.github/workflows/backend-build.yml
 
   backend-push:
     needs: backend-build
-    uses: ./.github/workflows/backend-push.yml@main
+    uses: ./.github/workflows/backend-push.yml
 
   flutter-build:
-    uses: ./.github/workflows/flutter-build.yml@main
+    uses: ./.github/workflows/flutter-build.yml
 
   flutter-release:
     needs: flutter-build
-    uses: ./.github/workflows/flutter-release.yml@main
+    uses: ./.github/workflows/flutter-release.yml
