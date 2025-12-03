@@ -31,7 +31,9 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
 
-    Widget activePage = const ListScreen();
+    Widget activePage = const ListScreen(
+      walks: ["test", "hoi"],
+    );
 
     if (_selectedPageIndex == 1) {
       activePage = const MapScreen();
@@ -59,8 +61,8 @@ class _TabsScreenState extends State<TabsScreen> {
           ),
         ),
       ),
+      backgroundColor: Color.fromARGB(255, 255, 255, 244),
       body: activePage,
-
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
           indicatorColor: Color.fromARGB(255, 110, 164, 182),

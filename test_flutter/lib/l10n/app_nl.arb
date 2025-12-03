@@ -2,5 +2,6 @@
   "navbarList": "Lijst",
   "navbarMap": "Kaart",
   "navbarSettings": "Instellingen",
-  "changeLanguage": "Verander taal"
+  "changeLanguage": "Verander taal",
+  "noWalks": "Geen Wandelingen gevonden"
 }

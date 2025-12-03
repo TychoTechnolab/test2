@@ -2,5 +2,6 @@
   "navbarList": "List",
   "navbarMap": "Map",
   "navbarSettings": "Settings",
-  "changeLanguage": "Change Language"
+  "changeLanguage": "Change Language",
+  "noWalks": "No Walks Found"
 }

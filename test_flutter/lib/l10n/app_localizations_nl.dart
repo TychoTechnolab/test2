@@ -19,4 +19,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get changeLanguage => 'Verander taal';
+
+  @override
+  String get noWalks => 'Geen Wandelingen gevonden';
 }

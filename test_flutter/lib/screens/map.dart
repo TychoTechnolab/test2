@@ -5,8 +5,10 @@ class MapScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('Map'),
+    return ListView(
+      children: [
+        Text('Map'),
+      ],
     );
   }
 }
