@@ -1,5 +1,6 @@
 {
-  "hello": "Hallo",
-  "welcome": "Welkom bij mijn app",
+  "navbarList": "Lijst",
+  "navbarMap": "Kaart",
+  "navbarSettings": "Instellingen",
   "changeLanguage": "Verander taal"
 }

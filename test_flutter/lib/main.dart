@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'env.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:test_flutter/screens/tabs.dart';
 import 'l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -15,18 +16,38 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Locale _locale = const Locale('en'); // standaard taal
+  Locale _locale = AppLocalizations.supportedLocales.first;
 
-  void _changeLanguage() {
+  @override
+  void initState() {
+    super.initState();
+    _loadLanguage();
+  }
+
+  Future<void> _loadLanguage() async {
+    final prefs = await SharedPreferences.getInstance();
+    final langCode = prefs.getString('languageCode');
+
+    if (langCode != null) {
+      setState(() {
+        _locale = Locale(langCode);
+      });
+    }
+  }
+
+  Future<void> _setLanguage(Locale locale) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('languageCode', locale.languageCode);
+
     setState(() {
-      _locale = _locale.languageCode == 'en' ? const Locale('nl') : const Locale('en');
+      _locale = locale;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Meertalige App',
+      title: 'App',
       locale: _locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [
@@ -35,41 +56,7 @@ class _MyAppState extends State<MyApp> {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: MyHomePage(onChangeLanguage: _changeLanguage),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final VoidCallback onChangeLanguage;
-  const MyHomePage({super.key, required this.onChangeLanguage});
-
-  @override
-  Widget build(BuildContext context) {
-    final local = AppLocalizations.of(context)!;
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(local.hello),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(local.welcome),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: onChangeLanguage,
-              child: Text(local.changeLanguage),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              Env.apiUrl,
-              style: const TextStyle(fontSize: 22),
-            ),
-          ],
-        ),
-      ),
+      home: TabsScreen(onSelectLanguage: _setLanguage,),
     );
   }
 }

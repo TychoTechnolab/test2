@@ -9,10 +9,13 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get hello => 'Hello';
+  String get navbarList => 'List';
 
   @override
-  String get welcome => 'Welcome to my app';
+  String get navbarMap => 'Map';
+
+  @override
+  String get navbarSettings => 'Settings';
 
   @override
   String get changeLanguage => 'Change Language';

@@ -95,17 +95,23 @@ abstract class AppLocalizations {
     Locale('nl')
   ];
 
-  /// No description provided for @hello.
+  /// No description provided for @navbarList.
   ///
   /// In en, this message translates to:
-  /// **'Hello'**
-  String get hello;
+  /// **'List'**
+  String get navbarList;
 
-  /// No description provided for @welcome.
+  /// No description provided for @navbarMap.
   ///
   /// In en, this message translates to:
-  /// **'Welcome to my app'**
-  String get welcome;
+  /// **'Map'**
+  String get navbarMap;
+
+  /// No description provided for @navbarSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get navbarSettings;
 
   /// No description provided for @changeLanguage.
   ///

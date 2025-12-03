@@ -1,5 +1,6 @@
 {
-  "hello": "Hello",
-  "welcome": "Welcome to my app",
+  "navbarList": "List",
+  "navbarMap": "Map",
+  "navbarSettings": "Settings",
   "changeLanguage": "Change Language"
 }

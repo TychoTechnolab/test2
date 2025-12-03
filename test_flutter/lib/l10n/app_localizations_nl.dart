@@ -9,10 +9,13 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get hello => 'Hallo';
+  String get navbarList => 'Lijst';
 
   @override
-  String get welcome => 'Welkom bij mijn app';
+  String get navbarMap => 'Kaart';
+
+  @override
+  String get navbarSettings => 'Instellingen';
 
   @override
   String get changeLanguage => 'Verander taal';
