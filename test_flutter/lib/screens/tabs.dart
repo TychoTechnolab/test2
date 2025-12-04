@@ -19,7 +19,7 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  int _selectedPageIndex = 0;
+  int _selectedPageIndex = 1;
 
   void _selectPage(int index) {
     setState(() {
@@ -32,7 +32,7 @@ class _TabsScreenState extends State<TabsScreen> {
     final local = AppLocalizations.of(context)!;
 
     Widget activePage = const ListScreen(
-      walks: ["test", "hoi"],
+      walks: ["Circulair Singelpark"],
     );
 
     if (_selectedPageIndex == 1) {

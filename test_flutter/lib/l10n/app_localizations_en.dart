@@ -18,7 +18,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navbarSettings => 'Settings';
 
   @override
-  String get changeLanguage => 'Change Language';
+  String get language => 'Language';
 
   @override
   String get noWalks => 'No Walks Found';

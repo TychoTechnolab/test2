@@ -113,11 +113,11 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get navbarSettings;
 
-  /// No description provided for @changeLanguage.
+  /// No description provided for @language.
   ///
   /// In en, this message translates to:
-  /// **'Change Language'**
-  String get changeLanguage;
+  /// **'Language'**
+  String get language;
 
   /// No description provided for @noWalks.
   ///

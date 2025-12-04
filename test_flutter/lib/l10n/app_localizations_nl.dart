@@ -18,7 +18,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get navbarSettings => 'Instellingen';
 
   @override
-  String get changeLanguage => 'Verander taal';
+  String get language => 'Taal';
 
   @override
   String get noWalks => 'Geen Wandelingen gevonden';

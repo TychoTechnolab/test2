@@ -16,8 +16,9 @@ class SettingsScreen extends StatelessWidget {
     return ListView(
       children: [
         ListTile(
-          title: Text(local.changeLanguage),
-          trailing: const Icon(Icons.language),
+          leading: const Icon(Icons.language),
+          title: Text(local.language),
+          trailing: Text(local.localeName.toUpperCase()),
           onTap: () {
             _openLanguageSelector(context);
           },
