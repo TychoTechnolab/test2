@@ -29,6 +29,7 @@ class SettingsScreen extends StatelessWidget {
 
   void _openLanguageSelector(BuildContext context) {
     showModalBottomSheet(
+      backgroundColor: Color.fromARGB(255, 255, 255, 244),
       context: context,
       builder: (ctx) {
         return ListView(
